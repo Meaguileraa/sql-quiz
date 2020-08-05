@@ -124,3 +124,64 @@ Write a query that shows all the distinct regions that a salesperson can belong 
 
 
 SELECT region FROM salespeople GROUP BY region;
+
+
+==========
+10
+
+-----
+
+Write a query that shows the emails of all salespeople from both the
+Northwest and Southwest regions.
+
+
+-----
+
+
+SELECT email FROM salespeople WHERE region = 'Northwest' OR region = 'Southwest'; 
+
+
+==========
+11
+
+-----
+
+Write a query that shows the emails of all salespeople from both the
+Northwest and Southwest regions, this time using an 'IN' clause.  
+
+
+-----
+
+
+SELECT email FROM salespeople WHERE region IN ('Southwest', 'Northwest');
+
+
+==========
+12
+
+-----
+
+Write a query that shows the email, first name, and last name of all
+salespeople in either the Northwest or Southwest regions whose last names start
+with the letter 'M'.
+
+-----
+
+
+SELECT email, first_name, last_name FROM salespeople WHERE region IN ('Northwest', 'Southwest') AND last_name LIKE 'M%';
+
+
+==========
+13
+
+-----
+
+Write a query that shows the melon type, common name, price, and the
+price of the melon given in euros. The 'melons' table has prices in dollars,
+and the dollar to euro conversion rate is 0.73.
+
+
+-----
+
+
+SELECT melon_type, common_name, price, price * 0.73 FROM melons;
